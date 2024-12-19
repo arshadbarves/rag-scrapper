@@ -24,6 +24,11 @@ A production-ready web scraper designed specifically for extracting and processi
 ## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/ragscraper.git
+cd ragscraper
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -31,13 +36,13 @@ pip install -r requirements.txt
 
 ```python
 import asyncio
-from webscraper import WebScraper
+from webscraper import RagScraper
 
 async def main():
     # Initialize scraper
-    scraper = WebScraper(
+    scraper = RagScraper(
         base_url="https://example.com",
-        output_dir="scraped_content",
+        output_dir="data/scraped_content",
         rate_limit=1.0,  # 1 second between requests
         max_retries=3,
         respect_robots=True,
@@ -57,11 +62,11 @@ if __name__ == "__main__":
 ## Configuration
 
 - `base_url`: The base URL to scrape
-- `output_dir`: Directory to save scraped content
-- `rate_limit`: Minimum time between requests in seconds
-- `max_retries`: Maximum number of retry attempts
-- `respect_robots`: Whether to respect robots.txt rules
-- `max_workers`: Maximum number of concurrent workers
+- `output_dir`: Directory to save scraped content (default: data/scraped_content)
+- `rate_limit`: Minimum time between requests in seconds (default: 1.0)
+- `max_retries`: Maximum number of retry attempts (default: 3)
+- `respect_robots`: Whether to respect robots.txt rules (default: True)
+- `max_workers`: Maximum number of concurrent workers (default: 5)
 
 ## Output Format
 
@@ -91,24 +96,18 @@ The scraper produces JSON files with the following structure:
 ## Project Structure
 
 ```
-webscrapper/
-├── data/                      # All data files (ignored by git)
-│   ├── scraped_content/      # Scraped content organized by domain
-│   │   └── example.com/      # Domain-specific content
-│   └── logs/                 # Log files
-├── webscraper.py             # Main scraper implementation
-├── example.py                # Example usage and CLI
-├── demo.py                   # Simple demo script
-├── requirements.txt          # Python dependencies
-├── README.md                 # This file
-└── LICENSE                   # MIT License
+ragscraper/
+├── data/                     # All data files (ignored by git)
+│   ├── scraped_content/     # Scraped content organized by domain
+│   │   └── example.com/     # Domain-specific content
+│   └── logs/                # Log files
+├── webscraper.py            # Main scraper implementation
+├── example.py               # Example usage and CLI
+├── demo.py                  # Simple demo script
+├── requirements.txt         # Project dependencies
+├── LICENSE                  # MIT License
+└── README.md               # This file
 ```
-
-The `data/` directory is automatically created and organized as follows:
-- `scraped_content/`: Contains subdirectories for each scraped domain
-- `logs/`: Contains scraping logs and error reports
-
-All data files are ignored by git to keep the repository clean and focused on code.
 
 ## Best Practices
 
@@ -127,8 +126,4 @@ All data files are ignored by git to keep the repository clean and focused on co
 
 ## License
 
-MIT License
-
-## Author
-
-Your Name
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

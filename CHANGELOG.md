@@ -7,43 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2024-12-19
 
-### Added
-- Asynchronous web scraping with `aiohttp`
-- RAG-optimized content processing
-- Rate limiting with configurable delays
-- Robots.txt compliance
-- Retry mechanism with exponential backoff
-- User-agent rotation
-- Comprehensive logging system
-- Domain-specific content organization
-- Progress tracking with tqdm
-- Command-line interface
-- Example scripts and demos
-
-### Features
-- **Asynchronous Processing**
-  - Concurrent request handling
+### Core Features
+- **Asynchronous Web Scraping**
+  - Concurrent request handling with aiohttp
   - Connection pooling
   - Configurable workers
+  - Rate limiting with configurable delays
 
-- **Content Processing**
+- **RAG-Optimized Content Processing**
   - Clean content extraction
   - RAG-friendly formatting
   - Metadata parsing
   - Header structure preservation
-  - Link classification
+  - Link classification (internal/external)
 
-- **Error Handling**
+- **Smart Scraping**
+  - Robots.txt compliance
+  - User-agent rotation
+  - Retry mechanism with exponential backoff
+  - Domain-specific content organization
+
+- **Error Handling & Logging**
+  - Comprehensive logging system
   - Automatic retries
-  - Comprehensive logging
   - Exception tracking
   - Rate limit detection
+  - Progress tracking with tqdm
 
-- **Output Organization**
-  - Domain-specific directories
-  - Structured JSON output
-  - Detailed logging
-  - Statistics tracking
+### Project Structure
+- `webscraper.py`: Core scraping engine
+- `example.py`: Command-line interface
+- `demo.py`: Usage examples
+- `data/`: Organized storage for scraped content and logs
+  - `scraped_content/`: Domain-specific content storage
+  - `logs/`: Detailed operation logs
 
 ### Documentation
 - Comprehensive README

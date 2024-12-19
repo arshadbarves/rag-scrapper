@@ -21,7 +21,18 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 
-class WebScraper:
+class RagScraper:
+    """
+    RagScraper: A web scraper optimized for RAG (Retrieval-Augmented Generation) applications.
+    
+    Features:
+    - Asynchronous processing
+    - Rate limiting
+    - Robots.txt compliance
+    - Content cleaning for RAG/LLM use
+    - Structured output with metadata
+    - Error handling and retries
+    """
     def __init__(self, base_url: str, output_dir: str = "data/scraped_content", 
                  rate_limit: float = 1.0, max_retries: int = 3,
                  respect_robots: bool = True, max_workers: int = 5):

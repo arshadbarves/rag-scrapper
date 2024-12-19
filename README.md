@@ -1,6 +1,6 @@
-# Advanced Web Scraper for RAG/LLM Applications
+# RagScraper: Advanced Web Scraping for RAG/LLM Applications
 
-A production-ready web scraper designed specifically for extracting and processing content for Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) applications.
+A production-ready web scraper designed specifically for extracting and processing content for Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) applications. RagScraper intelligently processes web content to make it ideal for training data and RAG systems.
 
 ## Features
 

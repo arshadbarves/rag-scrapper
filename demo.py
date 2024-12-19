@@ -1,4 +1,4 @@
-from webscraper import WebScraper
+from webscraper import RagScraper
 import asyncio
 import json
 from pprint import pprint
@@ -8,7 +8,7 @@ async def main():
     url = "https://langchain-ai.github.io/langgraph/"
     
     # Initialize the scraper with custom settings
-    scraper = WebScraper(
+    scraper = RagScraper(
         base_url=url,
         output_dir="langgraph_docs",
         rate_limit=1.0,  # 1 second between requests
@@ -29,7 +29,7 @@ async def main():
     
     # Example 2: Scrape multiple pages (limited to 5 pages)
     print("\nExample 2: Scraping multiple pages (limited to 5)...")
-    scraper = WebScraper(
+    scraper = RagScraper(
         base_url=url,
         output_dir="langgraph_docs_full",
         rate_limit=1.0,

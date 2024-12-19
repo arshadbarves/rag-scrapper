@@ -35,9 +35,3 @@ env/
 
 # Project specific
 data/
-*.log
-langgraph_docs/
-langgraph_docs_full/
-python_docs/
-python_docs_full/
-scraped_content/

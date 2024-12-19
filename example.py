@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Example script demonstrating the usage of the WebScraper.
+Example script demonstrating the usage of RagScraper.
 Can be run from command line with various options.
 """
 
 import asyncio
 import argparse
 import logging
-from webscraper import WebScraper
+from webscraper import RagScraper
 from typing import Optional
 import sys
 
@@ -26,7 +26,7 @@ def setup_logging():
 def parse_arguments():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Web Scraper for RAG/LLM Applications'
+        description='RagScraper: Web Scraping for RAG/LLM Applications'
     )
     parser.add_argument(
         'url',
@@ -67,7 +67,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-async def scrape_single_page(scraper: WebScraper, url: str) -> Optional[dict]:
+async def scrape_single_page(scraper: RagScraper, url: str) -> Optional[dict]:
     """Scrape a single page and display results."""
     logging.info(f"Scraping single page: {url}")
     content = await scraper.scrape_page(url)
@@ -86,7 +86,7 @@ async def scrape_single_page(scraper: WebScraper, url: str) -> Optional[dict]:
         return None
 
 
-async def scrape_website(scraper: WebScraper, max_pages: Optional[int] = None):
+async def scrape_website(scraper: RagScraper, max_pages: Optional[int] = None):
     """Scrape multiple pages from the website."""
     logging.info(f"Scraping website (max pages: {max_pages or 'unlimited'})")
     await scraper.scrape_website(max_pages=max_pages)
@@ -105,7 +105,7 @@ async def main():
     setup_logging()
     
     # Initialize scraper
-    scraper = WebScraper(
+    scraper = RagScraper(
         base_url=args.url,
         output_dir=args.output_dir,
         rate_limit=args.rate_limit,
